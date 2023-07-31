@@ -1,0 +1,77 @@
+let mapleader = " "
+
+set relativenumber
+set number
+
+Plug 'preservim/nerdtree'
+set NERDTree
+
+" vim-surround usage:
+"
+" Change Surroundings:
+" cs"' - change surrounding from " to '
+" cs'<q> - change surrounding from ' to <q> tag
+"
+" Delete Surroundings:
+" ds" - delete surrounding "
+" ds' - delete surrounding '
+"
+" Add Surroundings:
+" ysaw" - add surrounding " to the word (cursor must be inside the word)
+" ysiw' - add surrounding ' to the inner word (cursor can be anywhere within the word)
+" yss) - add surrounding ) to the line
+"
+" Note: To add surrounding space with parenthesis or brackets, use one of the following:
+" yssb, yss[, yss{
+Plug 'tpope/vim-surround'
+
+""" Navigation Between Splits
+sethandler <c-m> a:vim
+sethandler <c-h> a:vim
+sethandler <c-l> a:vim
+sethandler <c-j> a:vim
+sethandler <c-u> a:vim
+sethandler <c-b> a:vim
+sethandler <c-n> a:vim
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+
+nnoremap <Leader>rp :action $LRU<CR>
+nnoremap <Leader>t :action ActivateTerminalToolWindow<CR>
+nnoremap <Leader>h :action HideAllWindows<CR>
+nnoremap <Leader>\ :action SplitVertically<CR>
+nnoremap <Leader>- :action SplitHorizontally<CR>
+nnoremap <Leader>q :action CloseEditor<CR>
+nnoremap <Leader> :action CloseOthers<CR>
+nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
+nnoremap <Leader>re :action RenameElement<CR>
+nnoremap <Leader>k :action KJumpAction<CR>
+
+nnoremap <Leader>rm :action RefactoringMenu<CR>
+nnoremap <Leader>gn :action Generate<CR>
+
+nnoremap <Leader>sd :action ChangesView.Diff<CR>
+
+nnoremap <Leader>nf :action NewElement<CR>
+
+nnoremap <Leader>gd :action GotoDeclaration<CR>
+nnoremap <Leader>gi :action GotoImplementation<CR>
+
+nnoremap <c-b> :action PreviousTab<CR>
+nnoremap <c-n> :action NextTab<CR>
+
+""" Should be done with control mapping
+nnoremap <Leader>em :action ExtractMethod<CR>
+
+nnoremap <Leader>eg :action Maven.ExecuteGoal<CR>
+
+nnoremap <Leader>rr :action Run<CR>
+
+nnoremap <Leader>ri :action Maven.Reimport<CR>
+
+Plug 'easymotion/vim-easymotion'
+map <leader>f <Plug>(easymotion-s)
+
+set quickscope
